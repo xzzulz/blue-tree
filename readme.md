@@ -1,6 +1,6 @@
 
 # tree.js
-v0.01
+v0.02
 
 tree data structure in javascript
 

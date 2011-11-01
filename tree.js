@@ -10,10 +10,13 @@ var tree = function() {
 	var pub = {}
 	
 	
-	pub.new = function( item ) {
+	
+
+	
+	pub.node = function( item ) {
 		
 		var nod = Object.create( node )
-		nod.subs = Object.create( o )
+		nod.subs = Object.create( subs )
 		nod.item = item
 
 		return nod
@@ -40,24 +43,24 @@ var tree = function() {
 	
 	
 	// namespace for subs operations
-	//var subs = ( function() {
+	var subs = ( function() {
 		
-		var o = {}
+		var pub = {}
 		
 		// first and last subs
-		o.first = null
-		o.last = null
+		pub.first = null
+		pub.last = null
 		
 		// number of subs
-		o.length = 0
+		pub.length = 0
 		
 		
 		var current,i
 		
 		
 		// get subnode at index position (0 index)
-		o.at = function( index ) {
-			if( index > o.length - 1 )
+		pub.at = function( index ) {
+			if( index > this.length - 1 )
 				throw "node \"at\" failed, given index exceeds subnodes number"
 				
 			current = o.first
@@ -72,29 +75,29 @@ var tree = function() {
 		
 		// add sub node at last position
 		// returns the added node
-		o.add = function( sub ) {
+		pub.add = function( sub ) {
 			
-			if( o.last ) {
-				sub.prev = o.last
-				o.last = sub
+			if( this.last ) {
+				sub.prev = this.last
+				this.last = sub
 			} else {
-				o.first = sub
-				o.last = sub
+				this.first = sub
+				this.last = sub
 			}
 			
-			o.length++	
+			this.length++	
 			return sub
 		}
 		
 		
 		// insert sub node at index position
 		// returns the inserted node		
-		o.insert = function( sub, index ) {
+		pub.insert = function( sub, index ) {
 			// validate index given
-			if( index > o.length - 1 )
+			if( index > this.length - 1 )
 				throw "node insert failed, given index exceeds valid values"
 				
-			current = o.at( index )
+			current = this.at( index )
 			sub.prev = current.prev
 			sub.next = current
 			current. prev = sub
@@ -105,17 +108,17 @@ var tree = function() {
 		}	
 		
 		
-		o.tear = function( sub ) {
+		pub.tear = function( sub ) {
 			sub.next.prev = sub.prev
 			sub.prev.next = sub.next
-			o.length--
+			this.length--
 			return sub
 		}		
 		
 		
-		//return o
+		return pub
 		
-	//}() )
+	}() )
 
 
 	
@@ -124,6 +127,63 @@ var tree = function() {
 }()
 
 
+/*
+var prot = {}
+prot.a = 1
+
+prot_sub = {}
+
+prot_sub.w = 5
+
+var ob1 = Object.create( prot )
+ob1.sub = Object.create( prot_sub )
+
+var ob2 = Object.create( prot )
+ob2.sub = Object.create( prot_sub )
+
+
+ob1.sub.w = 10
+ob2.sub.w = 20
+
+console.log( 'prot_sub.w: ' + prot_sub.w )
+
+console.log( 'ob1.sub.w: ' + ob1.sub.w )
+
+console.log( 'ob2.sub.w: ' + ob2.sub.w )
+*/
+
+
+
+
+
+/*
+
+var prot = {}
+prot.a = 1
+
+prot_sub = {}
+
+prot_sub.w = 5
+prot_sub.set = function( x ) { this.w = x }
+
+
+var ob1 = Object.create( prot )
+ob1.sub = Object.create( prot_sub )
+
+var ob2 = Object.create( prot )
+ob2.sub = Object.create( prot_sub )
+
+
+ob1.sub.set( 10 )
+ob2.sub.set( 20 )
+
+console.log( 'prot_sub.w: ' + prot_sub.w )
+
+console.log( 'ob1.sub.w: ' + ob1.sub.w )
+
+console.log( 'ob2.sub.w: ' + ob2.sub.w )
+ 
+*/
 
 
 
