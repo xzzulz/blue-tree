@@ -3,12 +3,12 @@
 <head>
 	<meta charset="utf-8" />
 	
-	<title>blue tree - tests</title>
+	<title>basement - blue tree</title>
 
-	<link type="text/css" href="basement.css" rel="stylesheet" />
+	<link type="text/css" href="basement/basement.css" rel="stylesheet" />
 	
 	<script type="text/javascript" src="jquery-1.6.4.min.js"></script>
-	<script type="text/javascript" src="basement.js"></script>
+	<script type="text/javascript" src="basement/basement.js"></script>
 	<script type="text/javascript" src="tree.js"></script>		
 	<script type="text/javascript" src="test.js"></script>		
 
@@ -18,24 +18,29 @@
 		
 </head>
 <body>
-
-	<div id="titleBox">	
-		<h2>blue tree - tests</h2>
+	
+	<div id="logo_box"><img id="logo" src="basement/basement2.png"></img></div>
+	
+	<div id="topBox">	
 	</div>
 	
-	<div id="testsBox">	
-		<div id="parseButtonBox">	
-			<button onclick="tests.do();">tests</button>
-		</div>
-		
-		<div id="resultsBox"></div>
-		
-		<div id="basement"></div>
-		
-		
+
 
 	
-	</div>
+	
+	<div id="testsBox"></div>
+		
+	<div id="testButtonBox">
+		<img id="test_button" 
+			src="basement/test.png" 
+			onclick="test.do()"
+			onmousedown="this.src='basement/test2.png'"
+			onmouseup="this.src='basement/test.png'"
+		></img>
+	</div>	
+
+	
+
 
 
 

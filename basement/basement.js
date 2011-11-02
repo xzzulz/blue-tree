@@ -5,20 +5,23 @@
 //
 var basement = function() {
 
-	// o public space
+
+	// public
+	pub = {}
 	
-	o = {}
 	
 	
+	var html_tests_box = '#testsBox'
 	
-	o.html = null
-	
+
+
+
 	
 	
 	rgx_name = /^\w[\w\d_]*$/
 	
 	// create a new test
-	o.test = function( name ) {
+	pub.test = function( name ) {
 		
 		console.log( 'new test: ' + name )
 			
@@ -55,7 +58,7 @@ var basement = function() {
 			.replace( '{name}', label )
 			.replace( '{name}', label )
 		
-		div = $( html ).appendTo( '#' + o.html )
+		div = $( html ).appendTo( html_tests_box )
 	}
 
 
@@ -72,7 +75,7 @@ var basement = function() {
 		else
 			html = html.replace( '{res}', html_item_fail )
 			
-		$( html ).appendTo( '#' + o.html )
+		$( html ).appendTo( html_tests_box )
 	}	
 		
 		
@@ -142,12 +145,17 @@ var basement = function() {
 		
 		return res
 	}
-
-
-
-
-
 	
-	return o
+	
+	pub.setup = function() {
+		
+		$('test_button').click( put.do_tests );
+	}
+	
+	
+	
+	
+	return pub
 	
 }()
+

@@ -3,17 +3,13 @@
 //
 // tree data structure in javascript
 //
-var tests = {}
+var test = {}
 
 
 
 
-tests.do = function() {
-	
-	
-	basement.html = 'basement'
-	
-	
+test.do = function() {
+		
 	this.a_node()
 	this.sub_one()
 	this.sub_two()
@@ -22,7 +18,8 @@ tests.do = function() {
 }
 
 
-tests.a_node = function() {
+
+test.a_node = function() {
 
 	this.node1 = tree.node("one")
 	
@@ -35,7 +32,7 @@ tests.a_node = function() {
 }
 
 
-tests.sub_one = function() {
+test.sub_one = function() {
 	
 	this.node2 = tree.node("two")
 	
@@ -52,7 +49,7 @@ tests.sub_one = function() {
 }
 
 
-tests.sub_two = function() {
+test.sub_two = function() {
 	
 	this.node3 = tree.node("two")
 	
@@ -71,7 +68,7 @@ tests.sub_two = function() {
 }
 
 
-tests.links = function() {
+test.links = function() {
 	
 	
 	
