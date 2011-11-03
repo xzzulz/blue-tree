@@ -1,0 +1,245 @@
+body{ 
+	font: 15px Verdana, sans-serif; 
+	margin: 0px;
+	background-color: #b7c490;
+}
+
+h2 {
+	font: bold 16px Verdana, sans-serif;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#logo_box {
+	position: absolute;
+	right: 20px;
+	top: 10px;
+	width: 260px;
+	height: 70px;
+	background-color: #5d7327;
+	border-radius: 5px;
+	box-shadow: #3f4e1b 5px 5px 0px;
+}
+
+#logo {
+	position: relative;
+	left: 14px;
+	top: 14px;
+}
+
+
+#top_box {
+	position: absolute;
+	left: 20px;
+	top: 10px;
+	right: 300px;
+	height: 70px;
+	background-color: #99aa59;
+	padding-left: 20px;
+	border-radius: 5px;
+	box-shadow: #86954c 5px 5px 0px;
+}
+
+#title_label_box {
+	position: absolute;
+	top: 12px;
+	left: 20px;
+	font: bold 14px Verdana;
+	color: #262d1b;
+}
+#title_box {
+	position: absolute;
+	top: 35px;
+	left: 20px;
+	font: bold 20px Verdana;
+	color: #262d1b;	
+}
+
+#label_passed {
+	position: absolute;
+	top: 5px;
+	right: 195px;
+	font: bold 13px Verdana;
+	color: #262d1b;
+}
+
+#label_failed {
+	position: absolute;
+	top: 5px;
+	right: 72px;
+	font: bold 13px Verdana;
+	color: #262d1b;
+}
+
+#tests_passed {
+	position: absolute;
+	top: 15px;
+	right: 160px;
+	width: 120px;
+	text-align: center;
+	font: bold 45px Verdana;
+	color: #338329;
+}
+
+#tests_failed {
+	position: absolute;
+	top: 15px;
+	right: 30px;
+	width: 120px;
+	text-align: center;
+	font: bold 45px Verdana;
+	color: #ad5646;
+}
+
+#tests_box {
+	position: absolute;
+	left: 10px;
+	top: 90px;
+	right: 160px;
+	bottom: 10px;
+	padding: 5px;
+	overflow: auto;
+}
+
+
+#test_button {
+	position: absolute;
+	width: 120px;
+	height: 38px;
+	top: 120px;
+	right: 20px;
+	border: 1px solid #267d64;
+	border-radius: 12px;
+	box-shadow: #00775e 5px 5px 0px;
+	text-align: center;
+	padding-top:10px;
+	font: bold 23px Verdana;
+	color: #f3f3af;
+	text-shadow: #667537 -1px -1px 0px;
+	cursor: hand;
+	cursor: pointer;
+}
+
+.grad { 
+	background-image: linear-gradient(bottom, #91DEC3 100%, #0D8F6A 0%);
+	background-image: -o-linear-gradient(bottom, #91DEC3 100%, #0D8F6A 0%);
+	background-image: -moz-linear-gradient(bottom, #91DEC3 100%, #0D8F6A 0%);
+	background-image: -webkit-linear-gradient(bottom, #91DEC3 100%, #0D8F6A 0%);
+	background-image: -ms-linear-gradient(bottom, #91DEC3 100%, #0D8F6A 0%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(1, #91DEC3),
+		color-stop(0, #0D8F6A)
+	);
+}
+#test_button:hover {
+	box-shadow: #00775e 6px 6px 0px;
+	top: 119px;
+	right: 21px;
+	
+	background-image: linear-gradient(bottom, #b1e7d0 100%, #2a9f6e 0%);
+	background-image: -o-linear-gradient(bottom, #b1e7d0 100%, #2a9f6e 0%);
+	background-image: -moz-linear-gradient(bottom, #b1e7d0 100%, #2a9f6e 0%);
+	background-image: -webkit-linear-gradient(bottom, #b1e7d0 100%, #2a9f6e 0%);
+	background-image: -ms-linear-gradient(bottom, #b1e7d0 100%, #2a9f6e 0%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(1, #b1e7d0),
+		color-stop(0, #2a9f6e)
+	);
+}
+
+#test_button:active {
+	box-shadow: #00775e 1px 1px 0px;
+	top: 124px;
+	right: 16px;
+	background-image: linear-gradient(bottom, #a8ea7f 100%, #49a818 0%);
+	background-image: -o-linear-gradient(bottom, #a8ea7f 100%, #49a818 0%);
+	background-image: -moz-linear-gradient(bottom, #a8ea7f 100%, #49a818 0%);
+	background-image: -webkit-linear-gradient(bottom, #a8ea7f 100%, #49a818 0%);
+	background-image: -ms-linear-gradient(bottom, #a8ea7f 100%, #49a818 0%);
+
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(1, #a8ea7f),
+		color-stop(0, #49a818)
+	);
+}
+
+.test {
+	padding: 10px;
+	margin: 15px 10px 10px 10px;
+	border-radius: 5px;
+}
+
+.test.ok {
+	background-color: #6eb166;
+	box-shadow: #508e48 5px 5px 0px;
+}
+
+.test.fail {
+	background-color: #c98679;
+	box-shadow: #bf6060 5px 5px 0px;
+}
+
+.test_id {
+	position: relative;
+	float: right;
+	margin: 6px 16px;
+	padding: 4px 8px;
+	text-align: center;
+	font-weight: bold; 
+	vertical-align: middle;
+	border-radius: 5px;
+	background-color: rgba(79,94,70,0.34);
+	color: #f0f5cc;
+}
+.descrip {
+	padding: 5px 20px;
+	font-size: 14px;
+	color: rgba(0,0,0,0.60);
+}
+.check {
+	padding: 0px 20px;
+	margin: 5px;
+	
+}
+.check_text {
+	margin-left: 35px;
+	padding: 5px 20px;
+	vertical-align: middle;
+}
+
+.check .ok {
+	position: relative;
+	float: left;
+	width:28px;
+	text-align: center;
+	background-color: #2fa076;
+	font-color: #fff;
+	font-weight: bold;
+	padding: 4px 8px;
+	box-shadow: #386e5a 4px 4px 0px;
+	border-radius: 5px;
+}
+.check .fail {
+	position: relative;
+	float: left;
+	width:28px;
+	text-align: center;
+	background-color: #da6878;
+	font-color: #fff;
+	font-weight: bold;
+	padding: 4px 8px;
+	box-shadow: #a54653 4px 4px 0px;
+	border-radius: 5px;
+	
+}
