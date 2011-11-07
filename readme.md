@@ -11,32 +11,37 @@ tested with [basement tests](http://nzonbi.github.com/blue-tree)
 ### "tree" module
 
 The tree module is the main module. Provides a single method, to create new node objects:
+
 ```javascript
 var new_node = tree.node()
 ```
+
 ### nodes objects
+
 ```javascript
 var node = tree.node( item )
 ```
+
 the "item" parameter is assigned to the "node.item" property. It's the "payload" of the node.
 
 
 #### Node objects properties:
+
 ```javascript
-	node.top
+node.top
 ```
 The parent node
-
+</ br>
 ```javascript
 node.next	
 ```
 The next sibling. null if there is none
-
+</ br>
 ```javascript
 node.prev
 ```	
 The previous sibling. null if there is none
-
+</ br>
 ```javascript
 node.item
 ```
