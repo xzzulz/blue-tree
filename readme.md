@@ -27,26 +27,41 @@ the "item" parameter is assigned to the "node.item" property. It's the "payload"
     node.top
 The parent node      
 
+---------------------------------------
+
     node.next
 The next sibling. null if there is none.      
+
+---------------------------------------
 
     node.prev
 The previous sibling. null if there is none.      
 
+---------------------------------------
+
     node.item
 The "payload" of the node.    
 
+---------------------------------------
 
 In the next properties, note the use of "sub" as a namespace.    
 
-> > node.sub.first
-> The first child or null if there is none.
+---------------------------------------
+
+    node.sub.first
+The first child or null if there is none.
+
+---------------------------------------
   					
-> #### node.sub.last
->The last child or null if there is none.
+    node.sub.last
+The last child or null if there is none.
+
+---------------------------------------
 	
-> * node.sub.n	
-> The number of childs.
+    node.sub.n	
+The number of childs.
+
+---------------------------------------
 
 #### Node objects methods:
 
