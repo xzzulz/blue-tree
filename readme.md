@@ -37,10 +37,13 @@ The next sibling. null if there is none.
     node.prev
 The previous sibling. null if there is none.      
 
+<br />
+
 ---------------------------------------
 
     node.item
 The "payload" of the node.    
+<br />
 
 ---------------------------------------
 
@@ -50,6 +53,7 @@ In the next properties, note the use of "sub" as a namespace.
 
     node.sub.first
 The first child or null if there is none.
+<br />
 
 ---------------------------------------
   					
