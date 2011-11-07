@@ -49,7 +49,7 @@ var tree = function() {
 		nod.sub = make.sub( nod )
 		
 		
-		nod.tear = function() {
+		nod.rip = function() {
 						
 			if( ! nod.top ) return nod
 			

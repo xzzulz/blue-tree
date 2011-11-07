@@ -177,18 +177,26 @@ test.at_again = function() {
 
 test.tear = function() {
 	
+	this.node6 = this.node1.sub.at(2).rip()
 
-	
-	this.node6 = this.node1.sub.at(2).tear()
-	
-	console.log( this.node1 )
-	console.log( this.node6 )
-
-	basement.test('insert method')
-		.check( 'tear node at 2', 
+	basement.test('tear method', 'tear node at 2' )
+		.check( 'tear node item = "sub two"', 
 			this.node6.item == "sub two" )
-				
-				
+		.check( 'sub at 0 = "sub one"', 
+			this.node1.sub.at(0).item == "sub one" )				
+		.check( 'first next = "insert"', 
+			this.node1.sub.first.next.item == "insert" )
+		.check( 'first next next = "sub two"', 
+			this.node1.sub.first.next.next.item == "sub three" )
+		.check( 'sub last = "sub three"', 
+			this.node1.sub.last.item == "sub three" )
+		.check( 'tear node next = null', 
+			this.node6.next == null )
+		.check( 'tear node prev = null', 
+			this.node6.prev == null )
+		.check( 'tear node top = null', 
+			this.node6.top == null )
+
 }
 
 
