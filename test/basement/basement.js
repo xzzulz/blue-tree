@@ -16,17 +16,34 @@ var basement = function() {
 	var failed_tests = 0
 
 
-
-	pub.new_set = function( title ) {
-
+	// starts a new set of tests
+	pub.set = function( title ) {
+		$('#title_box').text( title )
+		
+		// clear the view from previous tests
+		$( view.tests_box  ).empty()
+		
+		// reset counters
+		tests_count = 0
+		passed_tests = 0
+		failed_tests = 0
+		
+		// update view counters
+		view.update_counters()
 	}
 	
+	
+	
+	// test click button
+	// users should place a function
+	// that executes tests here
+	pub.test_click = function() { console.log('click') }
 	
 	
 	
 	// create a new test
 	// return the test object
-	pub.new_test = function( name, descrip ) {
+	pub.test = function( name, descrip ) {
 				
 		tests_count++
 		passed_tests++
@@ -77,7 +94,7 @@ var basement = function() {
 		check: function( label, bool, descrip ) { 
 						
 			this.checks.push( bool )
-			view.add_check( label, bool, descrip )
+			view.add_check( label, bool, descrip, this.id )
 			
 			this.update_status( bool )
 			return this 
@@ -87,17 +104,10 @@ var basement = function() {
 		update_status: function( bool ) {
 			
 			// determine if any counter should be increased
-			console.log('====================================')
-			console.log( 'bool: ' + bool )
-			console.log( 'this.pass: ' + this.pass )
 			if( this.pass && !bool ) {
-				console.log('changed')
 				passed_tests--
 				failed_tests++					
 			}
-			
-			console.log( 'passed_tests: ' + passed_tests )
-			console.log( 'failed_tests: ' + failed_tests )
 			
 			view.update_counters()
 
@@ -140,8 +150,9 @@ var basement = function() {
 	// view setup
 	// sets the test button event
 	view.setup = function() {	 
-		$('#test_button').click( test.do );
+		$('#test_button').click( pub.test_click );
 	}
+	
 	$( window ).load( view.setup )
 	
 	
@@ -151,25 +162,34 @@ var basement = function() {
 
 
 	// views 
-	view.test = '<div>'
+	view.test = '<div id="{test.id}_box">'
+	+ '<div>'
 	+ '<div class="test_id">{test.id}</div>'
 	+ '<div id="{test.id}" class="test">{test.name}'
 	+ '<div class="descrip">{test.descrip}</div>'
 	+ '</div>'
 	+ '</div>'
+	+ '</div>'
 	
-	view.check = '<div id="{name}" class="check">{res} <div class="check_text">{name}</div></div>'
+	view.check = '<div id="{name}" class="check">'
+	+ '{res}' 
+	+ '<div class="check_text">{name}'
+	+ '<span class="comment">{check.comment}</span>'
+	+ '</div>'
+	+ '</div>'
+	
 	view.check_ok = '<div class="ok">ok</div>'
 	view.check_fail = '<div class="fail">fail</div>'
 	
 	
 
 
-	
+	var html
 	// add a test to the view
 	view.add_test = function( test ) {
 				
-		var html = view.test
+		html = view.test
+			.replace( '{test.id}', test.id )
 			.replace( '{test.id}', test.id )
 			.replace( '{test.id}', test.id )
 			.replace( '{test.name}', test.name )
@@ -194,20 +214,25 @@ var basement = function() {
 		
 	}
 
-
+	var id_box// , html
 	// add a check to the view
-	view.add_check = function( label, bool ) {
-				
-		var html = view.check
+	view.add_check = function( label, bool, descrip, id ) {
+		
+		if( ! descrip ) descrip = ''
+		
+		html = view.check
 			.replace( "{name}", label )
 			.replace( "{name}", label )
+			.replace( "{check.comment}", descrip )
 		
 		if( bool ) 
 			html = html.replace( '{res}', view.check_ok )
 		else
 			html = html.replace( '{res}', view.check_fail )
-			
-		$( html ).appendTo( view.tests_box )
+		
+		//$( html ).appendTo( view.tests_box )
+		id_box = $( '#' + id + '_box' )
+		$( html ).appendTo( id_box )
 	}
 	
 	

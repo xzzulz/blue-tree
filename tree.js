@@ -12,63 +12,96 @@ var tree = function() {
 	
 	
 
-	
+	// creates a new node
 	pub.node = function( item ) {
 		
-		var nod = Object.create( node )
-		nod.subs = Object.create( subs )
-		nod.item = item
-
+		var nod = make.node( item)		
 		return nod
 	}
 	
-	////////////////////////////////////////////
-	// node definition
-	var node = {}
 	
-	// item
-	// payload of the node
-	node.item = null
+	// namespace
+	var make = {}
 	
-	// top node
-	node.top = null
+
+	// create a new node
+	make.node = function( item ) {
+		// node
+		var nod = {}
+		
+		// item
+		// "payload" of the node
+		// assign the provided item property
+		nod.item = null
+		if( item )
+			nod.item = item
+		
+		// top node
+		nod.top = null
+
+		// prev 
+		nod.prev = null
+		
+		// next 
+		nod.next = null
+		
+		// namespace for sub nodes
+		nod.sub = make.sub( nod )
+		
+		
+		nod.tear = function() {
+						
+			if( ! nod.top ) return nod
+			
+			if( nod.next )
+				nod.next.prev = nod.prev
+			if( nod.prev )
+				nod.prev.next = nod.next
+							
+			nod.top.sub.n--
+			nod.top = null
+			nod.next = null
+			nod.prev = null
+						
+			return nod
+		}
+		
+		
+		return nod
+	}
 	
 	
 	
-	// prev 
-	node.prev = null
 	
-	// next 
-	node.next = null
-	
-	
-	// namespace for subs operations
-	var subs = ( function() {
+	// namespace for sub operations
+	make.sub = function( nod ) {
 		
 		var pub = {}
 		
-		// first and last subs
+		// the owner node of this
+		// "sub" namespace
+		pub.nod = nod
+		
+		// first and last sub
 		pub.first = null
 		pub.last = null
 		
-		// number of subs
-		pub.length = 0
-		
-		
-		var current,i
-		
+		// number of sub nodes
+		pub.n = 0
 		
 		// get subnode at index position (0 index)
 		pub.at = function( index ) {
-			if( index > this.length - 1 )
-				throw "node \"at\" failed, given index exceeds subnodes number"
-				
-			current = o.first
-			for( i=0; i<=index; i++ )
-				current = current.next
+					
+			var pik,i
 			
-			return current
+			if( index > pub.n - 1 )
+				return null
 	
+			pik = pub.first
+			for( i=0; i<index; i++ )
+				pik = pik.next
+			
+			return pik
 		}
 		
 		
@@ -76,49 +109,53 @@ var tree = function() {
 		// add sub node at last position
 		// returns the added node
 		pub.add = function( sub ) {
-			
-			if( this.last ) {
-				sub.prev = this.last
-				this.last = sub
+									
+			if( pub.last ) {
+				sub.prev = pub.last
+				pub.last.next = sub
+				pub.last = sub
 			} else {
-				this.first = sub
-				this.last = sub
+				pub.first = sub
+				pub.last = sub
 			}
 			
-			this.length++	
+			sub.top = pub.nod
+			
+			pub.n++	
 			return sub
 		}
+		
 		
 		
 		// insert sub node at index position
 		// returns the inserted node		
 		pub.insert = function( sub, index ) {
-			// validate index given
-			if( index > this.length - 1 )
-				throw "node insert failed, given index exceeds valid values"
-				
-			current = this.at( index )
-			sub.prev = current.prev
-			sub.next = current
-			current. prev = sub
+			var pik
 			
-			length++
+			// validate index given
+			if( index < 0 )
+				throw "node insert failed, invalid index"
+			if( index > pub.n - 1 )
+				throw "node insert failed, given index exceeds valid places"
+				
+			pik = pub.at( index )
+			
+			sub.prev = pik.prev
+			sub.next = pik
+			pik.prev.next = sub
+			pik.prev = sub
+
+			sub.top = pub.nod
+			
+			pub.n++
 			
 			return sub	
 		}	
 		
 		
-		pub.tear = function( sub ) {
-			sub.next.prev = sub.prev
-			sub.prev.next = sub.next
-			this.length--
-			return sub
-		}		
-		
-		
 		return pub
 		
-	}() )
+	}
 
 
 	
@@ -127,63 +164,10 @@ var tree = function() {
 }()
 
 
-/*
-var prot = {}
-prot.a = 1
-
-prot_sub = {}
-
-prot_sub.w = 5
-
-var ob1 = Object.create( prot )
-ob1.sub = Object.create( prot_sub )
-
-var ob2 = Object.create( prot )
-ob2.sub = Object.create( prot_sub )
-
-
-ob1.sub.w = 10
-ob2.sub.w = 20
-
-console.log( 'prot_sub.w: ' + prot_sub.w )
-
-console.log( 'ob1.sub.w: ' + ob1.sub.w )
-
-console.log( 'ob2.sub.w: ' + ob2.sub.w )
-*/
 
 
 
 
-
-/*
-
-var prot = {}
-prot.a = 1
-
-prot_sub = {}
-
-prot_sub.w = 5
-prot_sub.set = function( x ) { this.w = x }
-
-
-var ob1 = Object.create( prot )
-ob1.sub = Object.create( prot_sub )
-
-var ob2 = Object.create( prot )
-ob2.sub = Object.create( prot_sub )
-
-
-ob1.sub.set( 10 )
-ob2.sub.set( 20 )
-
-console.log( 'prot_sub.w: ' + prot_sub.w )
-
-console.log( 'ob1.sub.w: ' + ob1.sub.w )
-
-console.log( 'ob2.sub.w: ' + ob2.sub.w )
- 
-*/
 
 
 

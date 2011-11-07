@@ -45,7 +45,7 @@ h2 {
 	top: 12px;
 	left: 20px;
 	font: bold 14px Verdana;
-	color: #262d1b;
+	color: #d9e3a4;
 }
 #title_box {
 	position: absolute;
@@ -60,7 +60,7 @@ h2 {
 	top: 5px;
 	right: 195px;
 	font: bold 13px Verdana;
-	color: #262d1b;
+	color: #758335;
 }
 
 #label_failed {
@@ -68,7 +68,7 @@ h2 {
 	top: 5px;
 	right: 72px;
 	font: bold 13px Verdana;
-	color: #262d1b;
+	color: #758335;
 }
 
 #tests_passed {
@@ -118,40 +118,39 @@ h2 {
 	text-shadow: #667537 -1px -1px 0px;
 	cursor: hand;
 	cursor: pointer;
-}
-
-.grad { 
-	background-image: linear-gradient(bottom, #91DEC3 100%, #0D8F6A 0%);
-	background-image: -o-linear-gradient(bottom, #91DEC3 100%, #0D8F6A 0%);
-	background-image: -moz-linear-gradient(bottom, #91DEC3 100%, #0D8F6A 0%);
-	background-image: -webkit-linear-gradient(bottom, #91DEC3 100%, #0D8F6A 0%);
-	background-image: -ms-linear-gradient(bottom, #91DEC3 100%, #0D8F6A 0%);
+	
+	background-image: linear-gradient(bottom, rgb(13,143,106) 0%, rgb(145,222,195) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(13,143,106) 0%, rgb(145,222,195) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(13,143,106) 0%, rgb(145,222,195) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(13,143,106) 0%, rgb(145,222,195) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(13,143,106) 0%, rgb(145,222,195) 100%);
 
 	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(1, #91DEC3),
-		color-stop(0, #0D8F6A)
-	);
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, rgb(13,143,106)),
+	color-stop(1, rgb(145,222,195))
+);
 }
+
 #test_button:hover {
 	box-shadow: #00775e 6px 6px 0px;
 	top: 119px;
 	right: 21px;
 	
-	background-image: linear-gradient(bottom, #b1e7d0 100%, #2a9f6e 0%);
-	background-image: -o-linear-gradient(bottom, #b1e7d0 100%, #2a9f6e 0%);
-	background-image: -moz-linear-gradient(bottom, #b1e7d0 100%, #2a9f6e 0%);
-	background-image: -webkit-linear-gradient(bottom, #b1e7d0 100%, #2a9f6e 0%);
-	background-image: -ms-linear-gradient(bottom, #b1e7d0 100%, #2a9f6e 0%);
+	background-image: linear-gradient(bottom, rgb(42,159,110) 0%, rgb(177,231,207) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(42,159,110) 0%, rgb(177,231,207) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(42,159,110) 0%, rgb(177,231,207) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(42,159,110) 0%, rgb(177,231,207) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(42,159,110) 0%, rgb(177,231,207) 100%);
 
 	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(1, #b1e7d0),
-		color-stop(0, #2a9f6e)
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, rgb(42,159,110)),
+	color-stop(1, rgb(177,231,207))
 	);
 }
 
@@ -159,19 +158,19 @@ h2 {
 	box-shadow: #00775e 1px 1px 0px;
 	top: 124px;
 	right: 16px;
-	background-image: linear-gradient(bottom, #a8ea7f 100%, #49a818 0%);
-	background-image: -o-linear-gradient(bottom, #a8ea7f 100%, #49a818 0%);
-	background-image: -moz-linear-gradient(bottom, #a8ea7f 100%, #49a818 0%);
-	background-image: -webkit-linear-gradient(bottom, #a8ea7f 100%, #49a818 0%);
-	background-image: -ms-linear-gradient(bottom, #a8ea7f 100%, #49a818 0%);
+	background-image: linear-gradient(bottom, rgb(72,168,24) 0%, rgb(168,234,127) 100%);
+	background-image: -o-linear-gradient(bottom, rgb(72,168,24) 0%, rgb(168,234,127) 100%);
+	background-image: -moz-linear-gradient(bottom, rgb(72,168,24) 0%, rgb(168,234,127) 100%);
+	background-image: -webkit-linear-gradient(bottom, rgb(72,168,24) 0%, rgb(168,234,127) 100%);
+	background-image: -ms-linear-gradient(bottom, rgb(72,168,24) 0%, rgb(168,234,127) 100%);
 
 	background-image: -webkit-gradient(
-		linear,
-		left bottom,
-		left top,
-		color-stop(1, #a8ea7f),
-		color-stop(0, #49a818)
-	);
+	linear,
+	left bottom,
+	left top,
+	color-stop(0, rgb(72,168,24)),
+	color-stop(1, rgb(168,234,127))
+);
 }
 
 .test {
@@ -242,4 +241,10 @@ h2 {
 	box-shadow: #a54653 4px 4px 0px;
 	border-radius: 5px;
 	
+}
+.check .comment {
+	color: #e1f3c0;
+	padding-left: 20px;
+
+
 }
