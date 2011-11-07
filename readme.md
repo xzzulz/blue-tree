@@ -22,17 +22,41 @@ the "item" parameter is assigned to the "node.item" property. It's the "payload"
 
 
 #### Node objects properties:
+```javascript
+	node.top
+```
+The parent node
 
-	node.top	The parent node
-	node.next	The next sibling. null if there is none
-	node.prev	The previous sibling. null if there is none
-	node.item	The "payload" of the node
+```javascript
+node.next	
+```
+The next sibling. null if there is none
+
+```javascript
+node.prev
+```	
+The previous sibling. null if there is none
+
+```javascript
+node.item
+```
+The "payload" of the node
 	
 In the next properties, note the use of "sub" as a namespace.
+```javascript
+node.sub.first
+```
+The first child or null if there is none
 
-	node.sub.first	The first child or null if there is none
-	node.sub.last	The last child or null if there is none
-	node.sub.n	The number of childs
+```javascript
+node.sub.last
+```	
+The last child or null if there is none
+	
+```javascript
+node.sub.n	
+```
+The number of childs
 
 #### Node objects methods:
 
@@ -41,10 +65,14 @@ node.rip()
 ```
 Pulls node object from its tree, and return it. tree nodes are
 
-##### node.sub.add( subnode)		
+```javascript
+node.sub.add( subnode)
+```
 Add subnode as last child of node, then returns subnode.
 
-##### node.sub.insert( subnode, i )	
+```javascript
+node.sub.insert( subnode, i )
+```
 Insert subnode as i (zero index) child of node.
 Returns subnode
 					
