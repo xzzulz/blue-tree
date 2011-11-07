@@ -12,72 +12,51 @@ tested with [basement tests](http://nzonbi.github.com/blue-tree)
 
 The tree module is the main module. Provides a single method, to create new node objects:
 
-```javascript
-var new_node = tree.node()
-```
+    var new_node = tree.node()
+
 
 ### nodes objects
 
-```javascript
-var node = tree.node( item )
-```
+    var node = tree.node( item )
 
 the "item" parameter is assigned to the "node.item" property. It's the "payload" of the node.
 
-
 #### Node objects properties:
 
-```javascript
-node.top
-```
+
+    node.top
 The parent node
-</ br>
-```javascript
-node.next	
-```
+
+    node.next	
 The next sibling. null if there is none
-</ br>
-```javascript
-node.prev
-```	
+
+    node.prev
 The previous sibling. null if there is none
-</ br>
-```javascript
-node.item
-```
+
+    node.item
 The "payload" of the node
 	
 In the next properties, note the use of "sub" as a namespace.
-```javascript
-node.sub.first
-```
+
+    node.sub.first
 The first child or null if there is none
 
-```javascript
-node.sub.last
-```	
+    node.sub.last
 The last child or null if there is none
 	
-```javascript
-node.sub.n	
-```
+    node.sub.n	
 The number of childs
 
 #### Node objects methods:
 
-```javascript
-node.rip()
-```
+
+    node.rip()
 Pulls node object from its tree, and return it. tree nodes are
 
-```javascript
-node.sub.add( subnode)
-```
+    node.sub.add( subnode)
 Add subnode as last child of node, then returns subnode.
 
-```javascript
-node.sub.insert( subnode, i )
-```
+    node.sub.insert( subnode, i )
 Insert subnode as i (zero index) child of node.
 Returns subnode
 					
