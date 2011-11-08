@@ -179,8 +179,8 @@ test.tear = function() {
 	
 	this.node6 = this.node1.sub.at(2).rip()
 
-	basement.test('tear method', 'tear node at 2' )
-		.check( 'tear node item = "sub two"', 
+	basement.test('rip method', 'rip node at 2' )
+		.check( 'rip node item = "sub two"', 
 			this.node6.item == "sub two" )
 		.check( 'sub at 0 = "sub one"', 
 			this.node1.sub.at(0).item == "sub one" )				
@@ -190,11 +190,11 @@ test.tear = function() {
 			this.node1.sub.first.next.next.item == "sub three" )
 		.check( 'sub last = "sub three"', 
 			this.node1.sub.last.item == "sub three" )
-		.check( 'tear node next = null', 
+		.check( 'ripped node next = null', 
 			this.node6.next == null )
-		.check( 'tear node prev = null', 
+		.check( 'ripped node prev = null', 
 			this.node6.prev == null )
-		.check( 'tear node top = null', 
+		.check( 'ripped node top = null', 
 			this.node6.top == null )
 
 }
