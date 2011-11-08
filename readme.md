@@ -1,5 +1,5 @@
 
-# tree.js
+# blue tree
 v0.6
 
 tree data structure in javascript
@@ -16,7 +16,8 @@ The tree module is the main module. Provides a single method, to create new node
 
     var new_node = tree.node()
 
-<br /><br />
+
+
 ### nodes objects
 
     var node = tree.node( item )
@@ -24,30 +25,31 @@ The tree module is the main module. Provides a single method, to create new node
 the "item" parameter is assigned to the "node.item" property. It's the "payload" of the node.
 
 
+
 ### nodes objects properties:
 
-    node.top
+#### node.top
 The parent node
-<br /><br /><br />
+<br /><br />
 
-    node.next
+#### node.next
 The next sibling. null if there is none.
-<br /><br /><br />
+<br /><br />
 
-    node.prev
+#### node.prev
 The previous sibling. null if there is none.  
-<br /><br /><br />
+<br /><br />
 
-    node.item
+#### node.item
 The "payload" of the node.  
-<br /><br /><br />
+<br /><br />
 
 In the next properties, note the use of "sub" as a namespace.
 <br /><br /><br />
     
-    node.sub.first
+#### node.sub.first
 The first child or null if there is none.
-<br /><br /><br />
+<br /><br />
 				
     node.sub.last
 The last child or null if there is none.
