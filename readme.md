@@ -22,28 +22,28 @@ A list of properties and methods is provided:
 
 ### properties
 
-* node.top	
+* node.top  
   parent node
 
-* node.next	
+* node.next  
   next sibling or null
 
-* node.prev	
+* node.prev  
   previous sibling or null
 
-* node.item	
+* node.item  
   Anything that is assigned asthe node payload
 
-* node.sub.n	
+* node.sub.n  
   number of childs
 
-* node.sub.first	
+* node.sub.first  
   first child or null
 
-* node.sub.last	
+* node.sub.last  
   last child or null
 
-* node.sub.last	
+* node.sub.last  
   last child or null
 
 ### methods
