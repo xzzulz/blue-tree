@@ -32,7 +32,7 @@ A list of properties and methods is provided:
   previous sibling or null
 
 * node.item  
-  Anything that is assigned asthe node payload
+  Anything that is assigned as the node payload
 
 * node.sub.n  
   number of childs
