@@ -51,6 +51,9 @@ A list of properties and methods of nodes objects is provided:
 * node.sub.add( subnode )  
 adds subnode as last child of node, then returns subnode
 
+* node.sub.at( index )  
+returns the child at index position (zero index)
+
 * node.sub.insert( subnode, i )  
 Insert subnode as i (zero index) child of node. Returns subnode.
 
