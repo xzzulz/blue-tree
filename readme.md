@@ -4,7 +4,7 @@ v0.6
 
 Tree data structure in javascript
 
-Tested with [basement tests](http://nzonbi.github.com/blue-tree/test)
+Tested with [basement tests](http://nzonbi.github.com/blue-tree)
 
 licensed (MIT) included in "license" file.
 
