@@ -18,9 +18,9 @@ Nodes are create with:
 
 The item parameter, is the node payload, assigned to node.item
 
-A list of properties and methods is provided:
+A list of properties and methods of nodes objects is provided:
 
-### properties
+### nodes properties
 
 * node.top  
   parent node
@@ -46,7 +46,7 @@ A list of properties and methods is provided:
 * node.sub.last  
   last child or null
 
-### methods
+### nodes methods
 
 * node.sub.add( subnode )  
 adds subnode as last child of node, then returns subnode
