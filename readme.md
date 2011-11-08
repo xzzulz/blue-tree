@@ -49,14 +49,14 @@ A list of properties and methods is provided:
 ### methods
 
 * node.sub.add( subnode )
-  adds subnode as last child of node, then returns subnode
+adds subnode as last child of node, then returns subnode
 
 * node.sub.insert( subnode, i )
-  Insert subnode as i (zero index) child of node. Returns subnode.
+Insert subnode as i (zero index) child of node. Returns subnode.
 
 * node.rip()
-  Pulls node object from its tree, and return it (node). 
-  Other nodes of the tree, are left in consistent state.
+Pulls node object from its tree, and return it (node). 
+Other nodes of the tree, are left in consistent state.
 
 
 
