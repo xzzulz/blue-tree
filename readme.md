@@ -58,8 +58,8 @@ returns the child at index position (zero index)
 Insert subnode as i (zero index) child of node. Returns subnode.
 
 * node.rip()  
-Pulls node object from its tree, and return it (node).  
-Other nodes of the tree, are left in consistent state.
+Pulls node object from its tree, and returns it (node).  
+Other nodes of the tree are left in consistent state.
 
 
 
