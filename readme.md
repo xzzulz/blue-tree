@@ -62,11 +62,14 @@ Other nodes of the tree are left in consistent state.
 * node.walk( action )  
 Calls "action" function on all the nodes below "node". Descend 
 recursively on subnodes of subnodes.
+On each case, the function will get as first and only parameter, 
+the current node that is acting upon.
 
 * node.sub.each( action )  
 Calls "action" function on all the direct subnodes of "node",
 only the first level of depth. No recursion.
-
+On each case, the function will get as first and only parameter, 
+the current node that is acting upon.
 
 
 
