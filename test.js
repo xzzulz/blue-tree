@@ -21,6 +21,8 @@ test.do = function() {
 	test.insert()
 	test.at_again()
 	test.tear()
+	test.walk()
+	test.each()
 }
 
 // connect the function that executes the tests, 
@@ -200,3 +202,59 @@ test.tear = function() {
 }
 
 
+test.walk = function() {
+	
+
+	this.node1.sub.first.sub.add( tree.node( ".1.1") )
+	this.node1.sub.first.sub.add( tree.node( ".1.2") )
+		.sub.add( tree.node( ".1.2.1") )
+
+	this.node1.sub.first.next.sub.add( tree.node( ".2.1") )
+	
+	var items = ''
+	
+	var action = function( node ) {
+		items += node.item 
+		items += ' '
+	}
+	
+	this.node1.walk( action )
+	
+	var expected_items = 
+		'sub one '
+		+ '.1.1 '
+		+ '.1.2 '
+		+ '.1.2.1 '
+		+ 'insert '
+		+ '.2.1 '
+		+ 'sub three '
+
+	basement.test('walk method', '3 more nodes added as sub sub nodes, walk the whole tree and collect the items' )
+		.check( 'walk', items == expected_items, 'collected items on walk == expected value' ) 
+
+}
+
+
+test.each = function() {
+
+	var items = ''
+	
+	var action = function( node ) {
+		items += node.item 
+		items += ' '
+	}
+	
+	this.node1.sub.each( action )
+	
+	var expected_items = 
+		'sub one '
+		+ 'insert '
+		+ 'sub three '
+
+	console.log( items )
+
+	basement.test('each method', 'each applyes function to all sub nodes, only at the first level. No deep recusion to the sub sub nodes' )
+		.check( 'each', items == expected_items, 'collect items of the top node subs' ) 
+		
+		
+}
