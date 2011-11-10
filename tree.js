@@ -4,7 +4,7 @@
 // tree data structure in javascript
 //
 
-var tree = function() {
+tree = function() {
 	
 	
 	var pub = {}
@@ -48,7 +48,8 @@ var tree = function() {
 		// namespace for sub nodes
 		nod.sub = make.sub( nod )
 		
-		
+		// removes the node form its tree.
+		// returns the node.
 		nod.rip = function() {
 						
 			if( ! nod.top ) return nod
@@ -64,6 +65,24 @@ var tree = function() {
 			nod.prev = null
 						
 			return nod
+		}
+		
+		
+		// executes function func on all the tree
+		// nodes below (recursively)
+		nod.walk = function( do_on_each ) {
+			
+			var node = nod.sub.first
+			
+			while( node ) {
+				do_on_each( node )
+				
+				if( node.sub.n > 0 )
+					node.walk( do_on_each )
+					
+				node = node.next
+			}
+			
 		}
 		
 		
@@ -151,6 +170,19 @@ var tree = function() {
 			
 			return sub	
 		}	
+		
+		
+		// executes function "func" on each direct 
+		// sub node (not recursive)
+		pub.each = function( do_on_each ) {
+			
+			var node = pub.first
+			while( node ) {
+				do_on_each( node )
+				node = node.next
+			}
+			
+		}
 		
 		
 		return pub

@@ -43,8 +43,6 @@ A list of properties and methods of nodes objects is provided:
 * node.sub.last  
   last child or null
 
-* node.sub.last  
-  last child or null
 
 ### nodes methods
 
@@ -61,6 +59,13 @@ Insert subnode as i (zero index) child of node. Returns subnode.
 Pulls node object from its tree, and returns it (node).  
 Other nodes of the tree are left in consistent state.
 
+* node.walk( action )  
+Calls "action" function on all the nodes below "node". Descend 
+recursively on subnodes of subnodes.
+
+* node.sub.each( action )  
+Calls "action" function on all the direct subnodes of "node",
+only the first level of depth. No recursion.
 
 
 
