@@ -54,9 +54,6 @@ blue.tree = function() {
 		// returns the node.
 		nod.rip = function() {
 			
-			console.log('rip: ')
-			console.log( nod )
-			
 			if( ! nod.top ) return nod
 			
 			if( nod.next )
