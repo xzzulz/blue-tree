@@ -71,9 +71,8 @@ only the first level of depth. No recursion.
 On each case, the function will get as first and only parameter, 
 the current node that is acting upon.
 
-
-
-
+* node.flat()  
+Returns an array with references to all nodes in the tree
 
 
 
