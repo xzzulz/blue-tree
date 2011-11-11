@@ -4,7 +4,9 @@
 // tree data structure in javascript
 //
 
-tree = function() {
+var blue = {}
+
+blue.tree = function() {
 	
 	
 	var pub = {}
@@ -51,7 +53,10 @@ tree = function() {
 		// removes the node form its tree.
 		// returns the node.
 		nod.rip = function() {
-						
+			
+			console.log('rip: ')
+			console.log( nod )
+			
 			if( ! nod.top ) return nod
 			
 			if( nod.next )
@@ -59,7 +64,14 @@ tree = function() {
 			if( nod.prev )
 				nod.prev.next = nod.next
 							
+			if( nod.top.sub.last == nod	)
+				nod.top.sub.last = nod.prev
+
+			if( nod.top.sub.first == nod )
+				nod.top.sub.first = nod.next
+			
 			nod.top.sub.n--
+			
 			nod.top = null
 			nod.next = null
 			nod.prev = null
@@ -83,6 +95,20 @@ tree = function() {
 				node = node.next
 			}
 			
+		}
+
+
+		// returns an array with references to all nodes in tree
+		nod.flat = function() {
+			
+			var flat = []
+			
+			var grab = function( node ) {
+				flat.push( node )
+			}
+			nod.walk( grab )
+			
+			return flat
 		}
 		
 		
