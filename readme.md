@@ -2,7 +2,9 @@
 # blue tree
 v0.7
 
-Tree data structure in javascript
+Tree data structure in javascript.
+This implementation is based on closures.
+A prototype based implementation is [peas.js](http://nzonbi.github.com/peas.js)
 
 Tested with [basement tests](http://nzonbi.github.com/blue-tree) (tests in the browser)
 
@@ -22,56 +24,56 @@ A list of properties and methods of nodes objects is provided:
 
 ### nodes properties
 
-* node.top  
+* node.top
   parent node
 
-* node.next  
+* node.next
   next sibling or null
 
-* node.prev  
+* node.prev
   previous sibling or null
 
-* node.item  
+* node.item
   Anything that is assigned as the node payload
 
-* node.sub.n  
+* node.sub.n
   number of childs
 
-* node.sub.first  
+* node.sub.first
   first child or null
 
-* node.sub.last  
+* node.sub.last
   last child or null
 
 
 ### nodes methods
 
-* node.sub.add( subnode )  
+* node.sub.add( subnode )
 adds subnode as last child of node, then returns subnode
 
-* node.sub.at( index )  
+* node.sub.at( index )
 returns the child at index position (zero index)
 
-* node.sub.insert( subnode, i )  
+* node.sub.insert( subnode, i )
 Insert subnode as i (zero index) child of node. Returns subnode.
 
-* node.rip()  
-Pulls node object from its tree, and returns it (node).  
+* node.rip()
+Pulls node object from its tree, and returns it (node).
 Other nodes of the tree are left in consistent state.
 
-* node.walk( action )  
-Calls "action" function on all the nodes below "node". Descend 
+* node.walk( action )
+Calls "action" function on all the nodes below "node". Descend
 recursively on subnodes of subnodes.
-On each case, the function will get as first and only parameter, 
+On each case, the function will get as first and only parameter,
 the current node that is acting upon.
 
-* node.sub.each( action )  
+* node.sub.each( action )
 Calls "action" function on all the direct subnodes of "node",
 only the first level of depth. No recursion.
-On each case, the function will get as first and only parameter, 
+On each case, the function will get as first and only parameter,
 the current node that is acting upon.
 
-* node.flat()  
+* node.flat()
 Returns an array with references to all nodes in the tree
 
 
