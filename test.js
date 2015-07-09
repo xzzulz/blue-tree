@@ -5,7 +5,7 @@
 //
 var test = {}
 
-
+var tree = blue.tree
 
 
 test.do = function() {
