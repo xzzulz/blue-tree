@@ -4,9 +4,9 @@ v0.7
 
 Tree data structure in javascript.
 This implementation is based on closures.
-A prototype based implementation is [peas.js](http://nzonbi.github.com/peas.js)
+A prototype based implementation is [peas.js](http://xzzulz.github.com/peas.js)
 
-Tested with [basement tests](http://nzonbi.github.com/blue-tree) (tests in the browser)
+Tested with [basement tests](http://xzzulz.github.com/blue-tree) (tests in the browser)
 
 license (MIT) included in "license" file.
 
